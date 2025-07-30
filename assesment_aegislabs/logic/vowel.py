@@ -18,5 +18,4 @@ def count_vowels_consonants(text):
 
 
 print(count_vowels_consonants("Hallo Nama Saya Rokan"))
-# output: 8 Vowels and 10 Consonants
 

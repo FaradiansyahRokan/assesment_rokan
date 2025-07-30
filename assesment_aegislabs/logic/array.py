@@ -6,5 +6,3 @@ def sort_array(arr):
 
 data = [23, 7, 42, 19, 36, 12, 4, 45, 29, 31]
 print("hasil urutan:", sort_array(data))
-
-#output: hasil urutan: [4, 7, 12, 19, 23, 29, 31, 36, 42, 45]
