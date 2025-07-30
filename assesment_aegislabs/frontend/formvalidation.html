@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Validasi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #d7e1ec, #f5f9fd);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+      background-color: #f0f8ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <form class="form-container" onsubmit="return validateForm()" novalidate>
+    <h2>Formulir Pendaftaran</h2>
+
+    <label for="name">Nama:</label>
+    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+
+    <label for="address">Alamat:</label>
+    <input type="text" id="address" name="address" placeholder="Masukkan alamat" required>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      const form = document.querySelector('form');
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return false;
+      }
+      alert("Form berhasil dikirim!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
